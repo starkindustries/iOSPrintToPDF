@@ -148,7 +148,7 @@ class CreatorViewController: UIViewController, UITableViewDelegate, UITableViewD
         if items != nil {
             for invoiceItem in items {
                 let priceAsNumber = NumberFormatter().number(from: invoiceItem["price"]!)
-                total += Double(priceAsNumber!)
+                total += Double(truncating: priceAsNumber!)
             }
         }
         

@@ -88,13 +88,12 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     // MARK: IBAction Methods
     
     @IBAction func saveItem(_ sender: AnyObject) {
-        if txtItemDescription.text?.characters.count > 0 &&
-            txtPrice.text?.characters.count > 0 {
+        if txtItemDescription.text?.count > 0 &&
+            txtPrice.text?.count > 0 {
             
             if saveCompletionHandler != nil {
                 // Call the save completion handler to pass the item description and the price back to the CreatorViewController object.
                 saveCompletionHandler(txtItemDescription.text!, txtPrice.text!)
-//                saveCompletionHandler(itemDescription: txtItemDescription.text!, price: txtPrice.text!)
                 
                 // Pop the view controller.
                 navigationController?.popViewController(animated: true)
